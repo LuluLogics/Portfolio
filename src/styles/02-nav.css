@@ -1,0 +1,43 @@
+/* Navigation */
+
+html {
+    scroll-behavior: smooth;
+}
+
+.header {
+    position: absolute;
+    top: -2em;
+    left: 0;
+    color: #fff;
+    font-size: .8em;
+    width: 100%;
+    text-align: center;
+    font-family: 'Josefin Sans', sans-serif;
+    z-index: 2;
+    opacity: 0;
+    transition: all 1.9s ease-in-out;
+    padding: 0;
+    margin: 0;
+}
+.header.ended {
+    top: 3em;
+    opacity: 1;
+}
+.header>span {
+    padding: 0 3.25em;
+    letter-spacing: .4em;
+    position: relative; 
+}
+.header>span.active:after,
+.first {
+    position: absolute;
+    left: 50%;
+    transform: translate3d(-50%,0,0);
+}
+.header>span.active:after {
+    content: "";
+    bottom: -10px;
+    width: 20px;
+    height: 2px;
+    background: #fff;
+}

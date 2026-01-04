@@ -1,0 +1,62 @@
+@media only screen and (max-width: 660px) {
+    .a {
+        padding: 10px;
+        margin-right: 0rem;
+        letter-spacing: 0.3em;
+    }
+    .footer {
+        margin-bottom: 20px;
+    }
+    .header>span {
+        padding: 0 1em;
+    }
+    .header {
+        font-size: .6em;
+    }
+    .first>h1 {
+        margin: 10px 0;
+        font-weight: 100;
+        letter-spacing: 0.2em;
+        font-size: 13vw;
+    }
+    .first>p {
+        width: 85%;
+        line-height: 22px;
+    }
+    .second-container {
+        padding: 0;
+        justify-content: flex-end;
+    }
+    .second-container>ul {
+        margin: 0px 0px 30px 30px;
+        width: 80%;
+    }
+    .second-container>ul>li {
+        padding-right: 20px;
+        transition: all 0.8s ease-out;
+        font-size: 20px;
+    }
+    .second-container>p {
+        width: 85%;
+        margin-left: 30px;
+        line-height: 21px;
+        margin-bottom: 40px;
+    }
+    .third>p {
+        column-count: 1;
+    }
+}
+
+
+
+  /* On smaller screens: show only 1 card per row */
+  @media (max-width: 768px) {
+    .portfolio-card {
+      flex: 0 0 100%;
+      margin-right: 0;
+    }
+    .portfolio-wrapper {
+      flex-wrap: nowrap;
+      align-items: center;
+    }
+  }

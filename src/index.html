@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Lulu</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <meta name="description" content="Personal portfolio using threejs - by LuluLogics">
+
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="Threejs Portfolio - By LuluLogics">
+        <meta property="og:description" content="Personal portfolio using threejs - by LuluLugics">
+        <meta property="og:image" content="../static/textures/imageSocial.png">
+
+        <meta name="twitter:card" content="summary_large_image">
+        <meta property="twitter:domain" content="threejs-graces.tiiny.site/">
+        <meta property="twitter:url" content="https://threejs-graces.tiiny.site/">
+        <meta name="twitter:title" content="Threejs Graces - By Anderson Mancini">
+        <meta name="twitter:description" content="A threejs graces renderer example using threejs boilerplate - by Anderson Mancini">
+        <meta name="twitter:image" content="../static/textures/imageSocial.png">
+
+        <meta name="keywords" content="ThreeJS, HTML, CSS, JavaScript">
+        <meta name="author" content="Anderson Mancini">
+
+        <link rel="apple-touch-icon" sizes="180x180" href="../static/favicon/L.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="../static/favicon/logics.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="../static/favicon/Ell.png">
+        <link rel="manifest" href="../static/favicon/site.webmanifest">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Josefin+Sans&family=Nanum+Myeongjo&display=swap" rel="stylesheet">
+
+        <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+        <script>
+          (function() {
+            emailjs.init("CeFVGhoKRZEjIBVAN"); // Replace with your actual public key
+          })();
+        </script>
+    </head>
+        
+    <body>
+        <!-- Loading Animations -->
+        <div class="lds-roller">
+            <div></div><div></div><div></div><div></div>
+            <div></div><div></div><div></div><div></div>
+        </div>
+        <div id="loading-text-intro">
+            <p>Just a moment…</p>
+        </div>
+
+        <div class="main-container" style="visibility:hidden;">
+            <!-- Navigation -->
+            <nav class="header">
+                <a href="index.html" class="active a"><span>HOME</span></a>
+                <a href="#about" class="a"><span>ABOUT</span></a>
+                <a href="#projects" class="a"><span>PROJECTS</span></a>
+                <a href="#skills" class="a"><span>SKILLS</span></a>
+                <a href="#canvas-container-contact" class="a"><span>CONTACT</span></a>
+                <div class="cursor"></div>
+            </nav>
+            
+            <!-- First / Intro Section -->
+            <div class="first">
+                <h2>I'm</h2>
+                <h1>Luté Abrahams</h1>
+                <p>
+                    I'm a software developer based in Ireland, passionate about crafting exceptional digital experiences.</br>
+                    Committed to accessibility, I create human-centered products that empower users through intuitive design,
+                    seamless functionality, and thoughtful user experiences. Currently, I’m focused on building inclusive solutions
+                    that ensure technology serves everyone, regardless of ability, background, or technical expertise.
+                </p>
+            </div>
+
+            <!-- Second Section (Coding / Travel / Books) -->
+            <div class="section second" id="about">
+                <div class="second-container">
+                    <ul>
+                        <li id="aglaea" class="active">Coding</li>
+                        <li id="thalia"><a>Travel</a></li>
+                        <li id="euphre">Books</li>
+                    </ul>
+                    <p id="content">
+                        I specialize in creating visually stunning and user-friendly digital experiences. 
+                        With a keen eye for detail and a love for innovative design, I craft websites that 
+                        are not only beautiful but also highly functional.
+                    </p>
+                </div>
+                <!-- Renders the model from camera2 in this container -->
+                <div id="canvas-container-details"></div>
+            </div>
+            <section class="portfolio-section" id="projects">
+                <div class="portfolio-header">
+                  <h2 class="portfolio-title">Projects</h2>
+                  <p>Built to Perform. Designed to Impress.</p>
+                </div>
+              
+                <div class="portfolio-wrapper">
+                  <!-- Left Arrow (top-left) -->
+                  <button class="arrowBtn" id="prevBtn">&#8249;</button>
+              
+                  <!-- New viewport wrapper -->
+                  <div class="portfolio-viewport">
+                    <!-- Container with 3 "cards" in a row (desktop) -->
+                    <div class="portfolio-cards-container" id="projectsContainer">
+
+                      <!-- Project: AutoSec (Final Year Project) -->
+                      <div class="portfolio-card">
+                        <img src="assets/AutoSec.png" alt="AutoSec - Connected Vehicle Security" class="portfolio-image">
+                        <h3>AutoSec | Final Year Project</h3>
+                        <p>Connected-vehicle cybersecurity demonstrator: intrusion detection + OTA security concepts, with threat modelling and practical security validation.</p>
+                        <a href="https://github.com/LuluLogics/AutoSec" target="_blank" rel="noopener">
+                            <button class="portfolio-btn">Source</button>
+                        </a>
+                      </div>
+                      
+                      <!-- Project 1 -->
+                      <div class="portfolio-card">
+                        <img src="assets/web.png" alt="Project 1" class="portfolio-image">
+                        <h3>Agentic Corporate Trader</h3>
+                        <p>AI-driven platform to manage investments in technology stocks & cryptocurrencies.</p>
+                        <a href="https://actproject.netlify.app/" target="_blank">
+                          <button class="portfolio-btn">Demo</button>
+                        </a>
+                      </div>
+                      <!-- Project 2 -->
+                      <div class="portfolio-card">
+                        <img src="assets/Mac2.png" alt="Project 2" class="portfolio-image">
+                        <h3>International Book Fair</h3>
+                        <p>Experience books, seminars, and cultural activities across the world, at your fingertips.</p>
+                        <a href="https://actgroupmtu.netlify.app/" target="_blank">
+                          <button class="portfolio-btn">Demo</button>
+                        </a>
+                      </div>
+                        <!-- Project 6 -->
+                      <div class="portfolio-card">
+                        <img src="assets/Z.png" alt="Project 6" class="portfolio-image">
+                        <h3>Zombie Survival</h3>
+                        <p>Single person survival shooter: flashlight + rifle switching, escalating zombie waves, and score chasing gameplay.</p>
+                        <a href="https://github.com/LuluLogics/Zombie-Survival" target="_blank">
+                          <button class="portfolio-btn">Source</button>
+                        </a>
+                      </div>
+                      <!-- Project 3 -->
+                      <div class="portfolio-card">
+                        <img src="assets/iPhone.png" alt="Project 3" class="portfolio-image">
+                        <h3>ACT Mobile</h3>
+                        <p>Mobile companion for Agentic Corporate Trader (ACT)—track markets, signals, and portfolio insights on the go.</p>
+                        <a href="https://github.com/LuluLogics/ACT-Mobile" target="_blank">
+                          <button class="portfolio-btn">Source</button>
+                        </a>
+                      </div>
+
+                        <!-- Project 7 -->
+                      <div class="portfolio-card">
+                        <img src="assets/ED.png" alt="Project 7" class="portfolio-image">
+                        <h3>Echoes Of The Deep</h3>
+                        <p>Fast paced parkour side-scroller, navigating a mechanical world filled with moving machinery & hazards.</p>
+                        <a href="https://github.com/LuluLogics/Echoes-Of-The-Deep" target="_blank">
+                          <button class="portfolio-btn">Source</button>
+                        </a>
+                      </div>
+
+                      <!-- Project 4 -->
+                      <div class="portfolio-card">
+                        <img src="assets/point.png" alt="Project 4" class="portfolio-image">
+                        <h3>Ping Pong</h3>
+                        <p>A classic Pong remake built with JavaFX—smooth controls, clean UI, and arcade style gameplay.</p>
+                        <a href="https://github.com/LuluLogics/Ping-Pong-JavaFX" target="_blank">
+                          <button class="portfolio-btn">Source</button>
+                        </a>
+                      </div>
+                      <!-- Project 5 -->
+                      <div class="portfolio-card">
+                        <img src="assets/iPhone1.png" alt="Project 5" class="portfolio-image">
+                        <h3>Lulu Rangers</h3>
+                        <p>A Kotlin-built football management game—build your squad, set tactics, and chase trophies on mobile.</p>
+                        <a href="https://github.com/LuluLogics/Lulu-Rangers" target="_blank">
+                          <button class="portfolio-btn">Source</button>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+              
+                  <!-- Right Arrow (top-left) -->
+                  <button class="arrowBtn" id="nextBtn">&#8250;</button>
+                  <div class="portfolio-dots" id="portfolioDots" aria-label="Project slider dots"></div>
+                </div>
+            </section>
+
+                        
+            <!-- Skills Section -->
+            <div class="making-section" id="skills">
+
+                <!-- LEFT side: entire half for the 3D model -->
+                <div class="making-left">
+                <div id="canvas-container-making"></div>
+                </div>
+            
+                <!-- RIGHT side: entire half for text -->
+                <div class="making-right">
+                <h2>Skills</h2>
+                <blockquote>
+                    <p>
+                        “Your work is going to fill a large part of your life, and the only way to be truly satisfied is to do what you believe is great work. And the only way to do great work is to love what you do. If you haven't found it yet, keep looking. Don't settle. As with all matters of the heart, you'll know when you find it.”
+                    </p>
+                    — Steve Jobs | Apple
+                </blockquote>
+                <br>
+            
+                <!-- Use multiple rows for a perfectly centered inverted pyramid -->
+                <div class="skills-icons">
+                    <!-- Row 1: 7 icons -->
+                    <div class="row">
+                        <img src="assets/png/htmll.png" alt="HTML" />
+                        <img src="assets/png/csss.png" alt="CSS" />
+                        <img src="assets/png/ja.png" alt="JAVA" />
+                        <img src="assets/png/reactt.png" alt="React" />
+                        <img src="assets/png/node.png" alt="Node.js" />
+                        <img src="assets/png/figma.png" alt="Figma" />
+                        <img src="assets/png/python.png" alt="Python" />
+                    </div>
+            
+                    <!-- Row 2: 6 icons -->
+                    <div class="row">
+                        <img src="assets/png/php.png" alt="PHP" />
+                        <img src="assets/png/docker.png" alt="Docker" />
+                        <img src="assets/png/pi.png" alt="Raspberry Pi" />
+                        <img src="assets/png/post.png" alt="PostgreSQL" />
+                        <img src="assets/png/sql.png" alt="SQL" />
+                        <img src="assets/png/cisco.png" alt="Cisco" />
+                    </div>
+            
+                    <!-- Row 3: 5 icons -->
+                    <div class="row">
+                        <img src="assets/png/arduino.png" alt="Arduino" />
+                        <img src="assets/png/c.png" alt="C" />
+                        <img src="assets/png/cpp.png" alt="CPP" />
+                        <img src="assets/png/boot.png" alt="Bootstrap" />
+                        <img src="assets/png/kotlin.png" alt="Kotlin" />
+                    </div>
+            
+                    <!-- Row 4: 4 icons -->
+                    <div class="row">
+                        <img src="assets/png/fr.png" alt="Firebase" />
+                        <img src="assets/png/swift.png" alt="Swift" />
+                        <img src="assets/png/go.png" alt="Go" />
+                        <img src="assets/png/rabbit.png" alt="rabbitmq" />
+                    </div>
+            
+                    <!-- Row 5: 3 icons -->
+                    <div class="row">
+                        <img src="assets/png/r.png" alt="R-Programming" />
+                        <img src="assets/png/mongo.png" alt="MongoDB" />
+                        <img src="assets/png/word.png" alt="Wordpress" />
+                    </div>
+            
+                    <!-- Row 6: 2 icons -->
+                    <div class="row">
+                        <img src="assets/png/linux.png" alt="Linux" />
+                        <img src="assets/png/mac.png" alt="MacOS" />
+                    </div>
+            
+                    <!-- Row 7: 1 icon -->
+                    <div class="row">
+                        <img src="assets/png/win.png" alt="Windows" />
+                    </div>
+                </div>
+                </div>
+            </div>
+
+            <!-- Contact Me Section -->
+            <div class="third" id="canvas-container-contact">
+                <h2>Contact Me</h2>
+                <p>
+                    Have a project in mind or want to connect? I’m always open to ideas and collaborations. Fill out the form below and let’s start a chat.                    
+                </p>
+            
+                <form id="contact-form">
+                <!-- Name -->
+                <!-- <label for="name">Name:</label> -->
+                <input
+                    type="text" 
+                    id="name" 
+                    name="from_name" 
+                    placeholder="Your Name" 
+                    required
+                >
+            
+                <!-- Email -->
+                <!-- <label for="email">Email:</label> -->
+                <input 
+                    type="email" 
+                    id="email" 
+                    name="from_email" 
+                    placeholder="Your Email" 
+                    required
+                >
+            
+                <!-- Message -->
+                <!-- <label for="message">Message:</label> -->
+                <textarea 
+                    id="message" 
+                    name="message" 
+                    placeholder="Your Message" 
+                    rows="5" 
+                    required
+                ></textarea>
+            
+                <!-- Submit -->
+                <button type="submit">Send Message</button>
+                </form>
+            </div>
+  
+
+            <div class="social-icons">
+                <a href="https://github.com/lululogics" target="_blank">
+                    <img src="assets/icons/git.png" alt="gitHub">
+                </a>
+                <a href="https://www.linkedin.com/in/l-abrahams-439567208/" target="_blank">
+                    <img src="assets/icons/link.png" alt="Twitter">
+                </a>
+                <a href="https://discord.com/" target="_blank">
+                    <img src="assets/icons/dis.png" alt="LinkedIn">
+                </a>
+                <a href="https://gmail.com/" target="_blank">
+                    <img src="assets/icons/mail.png" alt="LinkedIn">
+                </a>
+            </div>
+            
+            <!-- Original full-screen background 3D? -->
+            <div id="canvas-container" class="fixed"></div> 
+
+            <!-- Footer Credits -->
+            <h4 class="footer">
+                <footer>
+                    <p id="footer-year"></p>
+                  </footer>
+            </h4>
+
+            <!-- Social Media Section -->
+
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>

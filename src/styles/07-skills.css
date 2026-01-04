@@ -1,0 +1,190 @@
+/**********************************************
+  SKILLS SECTION (LEFT/RIGHT SPLIT) - UPDATED FULL
+**********************************************/
+
+/* Responsive sizing knobs */
+:root {
+  --skills-icon-size: clamp(22px, 2.6vw, 42px);
+  --skills-col-gap: clamp(14px, 3vw, 54px);
+  --skills-row-gap: clamp(10px, 2.2vh, 24px);
+}
+
+.making-section {
+  display: flex;
+  width: 100vw;
+  min-height: 100vh;
+  height: auto;
+  position: relative;
+  background: radial-gradient(circle at 90% center, rgba(5,5,5,0) 30%, #141414 70%);
+
+  /* fade */
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out, transform 1.5s ease-in-out;
+}
+
+.making-section.visible {
+  opacity: 1;
+}
+
+/* LEFT: 3D */
+.making-left {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+#canvas-container-making {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Shrink the 3D canvas slightly so it doesn't overpower the section */
+#canvas-container-making canvas {
+  transform: scale(0.88);
+  transform-origin: center;
+}
+
+/* RIGHT: text + icons */
+.making-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  /* Keep everything inside viewport neatly */
+  padding: clamp(18px, 3vw, 44px);
+  box-sizing: border-box;
+  max-height: 100vh;
+
+  /* Align Skills heading + quote to the same left edge */
+  padding-left: 35px;
+  padding-right: 35px;
+}
+
+/* ===== Skills heading consistency (match Coding / Projects) ===== */
+.making-right h2{
+  font-family: 'DM Serif Display', serif;
+  font-weight: 400;
+  font-size: clamp(2.2rem, 4.8vw, 2.2rem);
+  letter-spacing: 0.01em;
+  margin: 0 0 10px;
+  color: #fff;
+  text-align: left;
+}
+
+/* underline like Coding/Projects */
+.making-right h2::after{
+  content: "";
+  display: block;
+  width: 70px;
+  height: 2px;
+  background-color: rgba(255,255,255,0.35);
+  margin-top: 16px;
+  transition: width 0.6s ease-in-out, background-color 0.6s ease-in-out;
+}
+
+.making-right h2:hover::after{
+  width: 100px;
+  background-color: white;
+}
+
+/* Quote: normal width + normal weight (NOT bold) */
+.making-right blockquote{
+  margin: 0;
+  padding: 0;
+  width: min(100%, 720px);
+}
+
+/* Quote text */
+.making-right blockquote p{
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 300;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: #898989;
+  margin: 0 0 12px;
+  text-align: left;
+}
+
+/* Author line */
+.making-right blockquote cite{
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 300;
+  font-style: italic;
+  color: #898989;
+}
+
+/* ICON PYRAMID (scales with window) */
+.skills-icons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--skills-row-gap);
+
+  width: 100%;
+  margin-top: clamp(18px, 4vh, 34px);
+
+  /* prevents last icon clipping/overlap */
+  padding-bottom: clamp(28px, 10vh, 130px);
+  box-sizing: border-box;
+}
+
+.skills-icons .row {
+  display: flex;
+  justify-content: center;
+  gap: var(--skills-col-gap);
+}
+
+.skills-icons .row img {
+  width: var(--skills-icon-size);
+  height: auto;
+  transition: transform 0.3s, filter 0.3s;
+  cursor: pointer;
+}
+
+.skills-icons .row img:hover {
+  transform: scale(1.25);
+  filter: brightness(1.35);
+}
+
+/* If the screen is short, allow scrolling INSIDE the right panel as a fallback */
+@media (max-height: 720px) {
+  .making-right {
+    overflow-y: auto;
+  }
+}
+
+/* Mobile layout */
+@media (max-width: 768px) {
+  .making-section {
+    flex-direction: column;
+  }
+
+  .making-left,
+  .making-right {
+    width: 100%;
+    flex: none;
+  }
+
+  .making-left {
+    height: 45vh;
+  }
+
+  .making-right {
+    max-height: none;
+  }
+
+  /* shrink 3D a bit more on mobile */
+  #canvas-container-making canvas {
+    transform: scale(0.78);
+  }
+
+  /* tighter spacing so icons don’t run off-screen */
+  .skills-icons .row {
+    gap: clamp(12px, 4vw, 28px);
+  }
+}

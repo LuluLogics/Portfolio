@@ -1,0 +1,26 @@
+@import "./styles/00-base.css";
+@import "./styles/01-loader.css";
+@import "./styles/02-nav.css";
+@import "./styles/03-canvas.css";
+@import "./styles/04-hero.css";
+@import "./styles/05-about.css";
+@import "./styles/06-portfolio.css";
+@import "./styles/07-skills.css";
+@import "./styles/08-contact.css";
+@import "./styles/99-responsive.css";
+
+
+/* =========================
+   TYPOGRAPHY (GLOBAL)
+   ========================= */
+:root{
+  --font-heading: 'Josefin Sans', sans-serif;
+  --font-body: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+
+  --weight-heading: 100;
+  --weight-body: 300;
+
+  --color-body: #c9c9c996;
+  --color-body-strong: #898989;
+  --color-white: #fff;
+}

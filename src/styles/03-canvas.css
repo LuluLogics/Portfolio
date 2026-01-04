@@ -1,0 +1,43 @@
+/* Canvas container behind the entire background */
+#canvas-container {
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    outline: none;
+    z-index: 0;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    background: radial-gradient(circle at center center, #171717 0, #050505 58%);
+}
+
+#canvas-container-details {
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    outline: none;
+    z-index: 0;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    pointer-events: all;
+    overflow: hidden;
+}
+
+.section {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    position: relative;
+    padding-left: 5%;
+    padding-right: 5%;
+    z-index: 1;
+    width: 65%;
+    height: 100vh;
+    pointer-events: none;
+}

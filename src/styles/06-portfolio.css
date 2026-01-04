@@ -1,0 +1,227 @@
+/******************************************
+PROJECT PORTFOLIO SECTION STYLES (UPDATED)
+******************************************/
+
+.portfolio-section {
+  width: 100vw;
+  min-height: 100vh;
+  padding: 40px 5%;
+  box-sizing: border-box;
+  background-color: #0a0a0a;
+  color: #fff;
+
+  /* fade-in */
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out, transform 1.5s ease-in-out;
+
+  justify-content: flex-start;
+  padding-top: clamp(90px, 12vh, 150px);  /* increase to move it down a bit */
+}
+
+.portfolio-section.visible {
+  opacity: 1;
+}
+
+.portfolio-header {
+  text-align: center;
+  max-width: 100%;
+  margin: 40px auto 10px auto;
+}
+
+.portfolio-header h2 {
+  font-family: 'DM Serif Display', serif;
+  font-weight: 200;                 /* removes default bold look */
+  font-size: clamp(2.2rem, 5vw, 2.2rem);
+  letter-spacing: 0.01em;
+  margin: 0 0 10px;
+  text-align: center;
+}
+
+.portfolio-header p {
+  font-family: 'Josefin Sans', sans-serif;  /* matches your paragraph style */
+  font-weight: 300;
+  font-size: 1.05rem;
+  color: #898989;
+  margin: 0;
+  text-align: center;
+}
+
+/* horizontal project line default state */
+.portfolio-title::after {
+  content: "";
+  display: block;
+  width: 70px;                      /* closer to the “Coding” underline */
+  height: 2px;
+  background-color: rgba(255,255,255,0.35);
+  margin: 16px auto 0;              /* spacing like your section headings */
+  transition: width 0.6s ease-in-out, background-color 0.6s ease-in-out;
+}
+
+/* hover */
+.portfolio-title:hover::after {
+  width: 100px;
+  background-color: white;
+}
+
+.portfolio-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;              /* better arrow alignment */
+  gap: 16px;
+  max-width: 1400px;      /* ⬅ bigger on large screens */
+
+  margin: 0 auto;
+  padding-top: 5%;
+  position: relative;
+}
+
+/* viewport hides overflow so only “page” of cards shows */
+.portfolio-viewport {
+  overflow: hidden;
+  width: 100%;
+}
+
+/* horizontal scrolling container (your JS moves this via transform) */
+.portfolio-cards-container {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 24px;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0 auto;
+  transition: transform 0.4s ease-in-out;
+}
+
+/* Arrow buttons (kept inside viewport on small screens) */
+.arrowBtn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+
+  display: grid;
+  place-items: center;
+
+  transition: transform 0.2s;
+}
+
+#prevBtn { left: 8px; }
+#nextBtn { right: 8px; }
+
+.arrowBtn:hover {
+  transform: translateY(-50%) scale(1.12);
+}
+
+/* Card */
+.portfolio-card {
+  flex: 0 0 calc((100% / 3) - 16px);   /* desktop: 3 cards */
+  min-width: 280px;                    /* prevents squishing/jumbled layout */
+
+  background-color: #111;
+  border-radius: 8px;
+  padding: 18px;
+  box-sizing: border-box;
+  text-align: left;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease-in-out;
+
+  display: flex;                       /* stabilizes text + button */
+  flex-direction: column;
+}
+
+.portfolio-card:hover {
+  transform: scale(1.04);
+}
+
+/* Stable image height */
+.portfolio-image {
+  width: 100%;
+  aspect-ratio: 16 / 9;                /* keeps consistent card height */
+  border-radius: 8px;
+  margin-bottom: 12px;
+  object-fit: cover;
+}
+
+.portfolio-card h3 {
+  font-size: 1.4rem;
+  margin: 0 0 8px;
+}
+
+/* Text grows, button stays at bottom */
+/* Card paragraph — match site body text style */
+.portfolio-card p {
+  flex: 1;
+
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 300;
+
+  font-size: 1rem;
+  line-height: 1.65;
+
+  color: #898989;          /* matches your other section paragraphs */
+  margin: 0 0 16px;        /* consistent spacing */
+}
+
+/* keep link/button area pinned */
+.portfolio-card a {
+  margin-top: auto;
+  display: inline-block;
+}
+
+.portfolio-btn {
+  font-size: 0.9rem;
+  padding: 8px 16px;
+  background: #ffffff10;
+  border: 1px solid #666;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s ease;
+  white-space: nowrap;                 /* prevents button text wrapping */
+}
+
+.portfolio-btn:hover {
+  background: #ffffff40;
+}
+
+/* ===== Responsive ===== */
+
+/* 2 cards */
+@media (max-width: 1024px) {
+  .portfolio-card {
+    flex: 0 0 calc((100% / 2) - 16px);
+  }
+}
+
+/* 1 card + tighter arrows */
+@media (max-width: 700px) {
+  .portfolio-card {
+    flex: 0 0 100%;
+    min-width: 0;                      /* allow full width on mobile */
+  }
+
+  .portfolio-wrapper {
+    padding-left: 56px;                /* space so arrows don’t overlap cards */
+    padding-right: 56px;
+  }
+
+  .arrowBtn {
+    width: 40px;
+    height: 40px;
+    font-size: 1.8rem;
+  }
+
+  #prevBtn { left: 6px; }
+  #nextBtn { right: 6px; }
+}
+
