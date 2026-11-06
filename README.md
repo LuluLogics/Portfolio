@@ -8,7 +8,7 @@ In this project, I wanted to show that creating a fancy design like this using #
 This project uses Threejs in vanillaJS with WebPack. I think this could be easier to understand for those who isn't familiar with React Three Fiber yet (like myself).
 
 # Live Link
-Live: [LuluLogics.com](https://lululogics.com/)
+Live: [LuluLogics.com](https://lululogics.com/) or [LuluLogics.netlify.app]([https://lululogics.com/](https://lululogics.netlify.app/))
 
 # Getting Started
 Download and install Node.js on your computer (https://nodejs.org/en/download/).
